@@ -48,7 +48,8 @@ main {
   width: 0%;
   word-break: break-all;
   overflow: hidden;
-  animation: type var(--duration) linear infinite alternate,
+  animation:
+    type var(--duration) linear infinite alternate,
     multiline calc(var(--duration) * 2 * var(--lines)) steps(var(--lines))
       infinite;
 }
