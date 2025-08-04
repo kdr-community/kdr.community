@@ -31,6 +31,46 @@ main {
   display: block;
 }
 
+/* Typewriter effect */
+/* https://dev.to/afif/a-scalable-css-only-typewriter-effect-2opn */
+.multiline-type-container {
+  display: inline-grid;
+  max-width: max-content;
+  height: 1em;
+  overflow: hidden;
+}
+
+.type {
+  --duration: 2s;
+  display: inline-block;
+  max-width: max-content;
+  height: 1em;
+  width: 0%;
+  word-break: break-all;
+  overflow: hidden;
+  animation: type var(--duration) linear infinite alternate,
+    multiline calc(var(--duration) * 2 * var(--lines)) steps(var(--lines))
+      infinite;
+}
+
+.type:before {
+  content: " ";
+  display: inline-block;
+}
+
+@keyframes type {
+  90%,
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes multiline {
+  100% {
+    transform: translateY(-300%);
+  }
+}
+
 /* Dark theme */
 
 @media (prefers-color-scheme: dark) {
