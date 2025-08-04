@@ -67,7 +67,7 @@ main {
 
 @keyframes multiline {
   100% {
-    transform: translateY(-300%);
+    transform: translateY(calc(-100% * var(--lines)));
   }
 }
 
