@@ -31,6 +31,18 @@ main {
   display: block;
 }
 
+a {
+  display: inline-block;
+  font-size: 2.5rem;
+  color: #6b46c1;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+a:hover {
+  color: #a855f7;
+}
+
 /* Typewriter effect */
 /* https://dev.to/afif/a-scalable-css-only-typewriter-effect-2opn */
 .multiline-type-container {
@@ -82,6 +94,14 @@ main {
 
   .main-title {
     color: #a855f7;
+  }
+
+  a {
+    color: #a855f7;
+  }
+
+  a:hover {
+    color: #c084fc;
   }
 }
 
