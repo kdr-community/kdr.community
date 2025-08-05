@@ -1,35 +1,30 @@
 :root {
-  --background: #f8f9ff;
-  --background-gradient: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
-  --foreground: #2d1b69;
-  --primary: #6b46c1;
-  --primary-hover: #a855f7;
-  --shade: #e2e8f0;
-  --secondary: #c084fc;
+  --primary: oklch(0.82 0.17 80);
+  --light: #fff;
+  --dark: #000000;
+
+  --background: var(--light);
+  --foreground: var(--dark);
+  --primary-hover: oklch(from var(--primary) calc(l + 0.1) c h);
 }
 
 /* Dark theme */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #1a1a2e;
-    --background-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    --foreground: #e2e8f0;
-    --primary: #a855f7;
-    --primary-hover: #c084fc;
-    --shade: #e2e8f0;
-    --secondary: #c084fc;
+    --background: var(--dark);
+    --foreground: var(--light);
   }
 }
 
 * {
   margin: 0;
   padding: 0;
-  /* box-sizing: border-box; */
+  box-sizing: border-box;
 }
 
 body {
   font-family: sans-serif;
-  background: var(--background-gradient);
+  background: var(--background);
   color: var(--foreground);
   min-height: 100vh;
   display: flex;
@@ -57,7 +52,7 @@ main {
 a {
   display: inline-block;
   font-size: 2.5rem;
-  color: var(--primary);
+  color: var(--foreground);
   text-decoration: none;
   padding: 0.5rem;
 }
