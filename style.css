@@ -1,3 +1,26 @@
+:root {
+  --background: #f8f9ff;
+  --background-gradient: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
+  --foreground: #2d1b69;
+  --primary: #6b46c1;
+  --primary-hover: #a855f7;
+  --shade: #e2e8f0;
+  --secondary: #c084fc;
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #1a1a2e;
+    --background-gradient: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    --foreground: #e2e8f0;
+    --primary: #a855f7;
+    --primary-hover: #c084fc;
+    --shade: #e2e8f0;
+    --secondary: #c084fc;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -6,8 +29,8 @@
 
 body {
   font-family: sans-serif;
-  background: linear-gradient(135deg, #f8f9ff 0%, #e8eaff 100%);
-  color: #2d1b69;
+  background: var(--background-gradient);
+  color: var(--foreground);
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -24,7 +47,7 @@ main {
 .main-title {
   font-size: clamp(3rem, 8vw, 8rem);
   font-weight: 900;
-  color: #6b46c1;
+  color: var(--primary);
 }
 
 .line {
@@ -34,13 +57,13 @@ main {
 a {
   display: inline-block;
   font-size: 2.5rem;
-  color: #6b46c1;
+  color: var(--primary);
   text-decoration: none;
   padding: 0.5rem;
 }
 
 a:hover {
-  color: #a855f7;
+  color: var(--primary-hover);
 }
 
 /* Typewriter effect */
@@ -81,27 +104,6 @@ a:hover {
 @keyframes multiline {
   100% {
     transform: translateY(calc(-100% * var(--lines)));
-  }
-}
-
-/* Dark theme */
-
-@media (prefers-color-scheme: dark) {
-  body {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
-    color: #e2e8f0;
-  }
-
-  .main-title {
-    color: #a855f7;
-  }
-
-  a {
-    color: #a855f7;
-  }
-
-  a:hover {
-    color: #c084fc;
   }
 }
 
